@@ -29,7 +29,7 @@ class PeopleList extends StatelessWidget {
                     return ProductCard(product: demoPersons[index]);
 
                   return SizedBox
-                      .shrink(); // here by default width and height is 0
+                      .shrink(); 
                 },
               ),
               SizedBox(width: getProportionateScreenWidth(20)),
