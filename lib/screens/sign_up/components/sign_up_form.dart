@@ -4,12 +4,17 @@ import 'package:mobileapp/components/default_button.dart';
 import 'package:mobileapp/components/form_error.dart';
 import 'package:mobileapp/screens/home/home_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
 import '../../../constants.dart';
 import '../../../size_config.dart';
 
 class SignUpForm extends StatefulWidget {
+  static const String id = 'RegisterScreen';
+  const SignUpForm({Key? key}) : super(key: key);
+
   @override
+  // ignore: library_private_types_in_public_api
   _SignUpFormState createState() => _SignUpFormState();
 }
 
@@ -24,7 +29,9 @@ class _SignUpFormState extends State<SignUpForm> {
   // ignore: non_constant_identifier_names
   String? conform_password;
   String? fullName;
+  String errorMessage = '';
   bool remember = false;
+  // bool _spinner = false;
   final List<String?> errors = [];
 
   void addError({String? error}) {
@@ -72,12 +79,11 @@ class _SignUpFormState extends State<SignUpForm> {
             text: "Sign Up",
             press: () async {
               try {
-                UserCredential newUser =
-                    await _auth.createUserWithEmailAndPassword(
-                        email: email!, password: password!);
-
                 if (_formKey.currentState!.validate()) {
                   // if all are valid then go to success screen
+                  UserCredential newUser =
+                      await _auth.createUserWithEmailAndPassword(
+                          email: email!, password: password!);
                   Navigator.pushNamed(context, HomeScreen.routeName);
                 }
               } catch (e) {
@@ -90,35 +96,33 @@ class _SignUpFormState extends State<SignUpForm> {
     );
   }
 
-  TextFormField buildConformPassFormField() {
+  TextFormField buildEmailFormField() {
     return TextFormField(
-      obscureText: true,
-      onSaved: (newValue) => conform_password = newValue,
+      keyboardType: TextInputType.emailAddress,
+      onSaved: (newValue) => email = newValue!,
       onChanged: (value) {
         if (value.isNotEmpty) {
-          removeError(error: kPassNullError);
-        } else if (value.isNotEmpty && password == conform_password) {
-          removeError(error: kMatchPassError);
+          removeError(error: kEmailNullError);
+        } else if (emailValidatorRegExp.hasMatch(value)) {
+          removeError(error: kInvalidEmailError);
         }
-        conform_password = value;
+        email = value;
       },
       validator: (value) {
         if (value!.isEmpty) {
-          addError(error: kPassNullError);
+          addError(error: kEmailNullError);
           return "";
-        } else if ((password != value)) {
-          addError(error: kMatchPassError);
+        } else if (!emailValidatorRegExp.hasMatch(value)) {
+          addError(error: kInvalidEmailError);
           return "";
         }
         return null;
       },
       decoration: const InputDecoration(
-        labelText: "Confirm Password",
-        hintText: "Re-enter your password",
-        // If  you are using latest version of flutter then lable text and hint text shown like this
-        // if you r using flutter less then 1.20.* then maybe this is not working properly
+        labelText: "Email",
+        hintText: "Enter your email address",
         floatingLabelBehavior: FloatingLabelBehavior.always,
-        suffixIcon: CustomSurffixIcon(svgIcon: "assets/icons/lock.svg"),
+        suffixIcon: CustomSurffixIcon(svgIcon: "assets/icons/mail.svg"),
       ),
     );
   }
@@ -156,47 +160,49 @@ class _SignUpFormState extends State<SignUpForm> {
     );
   }
 
+  TextFormField buildConformPassFormField() {
+    return TextFormField(
+      obscureText: true,
+      onSaved: (newValue) => conform_password = newValue,
+      onChanged: (value) {
+        if (value.isNotEmpty) {
+          removeError(error: kPassNullError);
+        } else if (value.isNotEmpty && password == conform_password) {
+          removeError(error: kMatchPassError);
+        }
+        conform_password = value;
+      },
+      validator: (value) {
+        if (value!.isEmpty) {
+          addError(error: kPassNullError);
+          return "";
+        } else if ((password != value)) {
+          addError(error: kMatchPassError);
+          return "";
+        }
+        return null;
+      },
+      decoration: const InputDecoration(
+        labelText: "Confirm Password",
+        hintText: "Re-enter your password",
+        // If  you are using latest version of flutter then lable text and hint text shown like this
+        // if you r using flutter less then 1.20.* then maybe this is not working properly
+        floatingLabelBehavior: FloatingLabelBehavior.always,
+        suffixIcon: CustomSurffixIcon(svgIcon: "assets/icons/lock.svg"),
+      ),
+    );
+  }
+
   TextFormField buildLastNameFormField() {
     return TextFormField(
       onSaved: (newValue) => fullName = newValue,
-      decoration: InputDecoration(
+      decoration: const InputDecoration(
         labelText: "Full Name",
         hintText: "Enter your full name",
         // If  you are using latest version of flutter then lable text and hint text shown like this
         // if you r using flutter less then 1.20.* then maybe this is not working properly
         floatingLabelBehavior: FloatingLabelBehavior.always,
         suffixIcon: CustomSurffixIcon(svgIcon: "assets/icons/User.svg"),
-      ),
-    );
-  }
-
-  TextFormField buildEmailFormField() {
-    return TextFormField(
-      keyboardType: TextInputType.emailAddress,
-      onSaved: (newValue) => email = newValue!,
-      onChanged: (value) {
-        if (value.isNotEmpty) {
-          removeError(error: kEmailNullError);
-        } else if (emailValidatorRegExp.hasMatch(value)) {
-          removeError(error: kInvalidEmailError);
-        }
-        return null;
-      },
-      validator: (value) {
-        if (value!.isEmpty) {
-          addError(error: kEmailNullError);
-          return "";
-        } else if (!emailValidatorRegExp.hasMatch(value)) {
-          addError(error: kInvalidEmailError);
-          return "";
-        }
-        return null;
-      },
-      decoration: const InputDecoration(
-        labelText: "Email",
-        hintText: "Enter your email address",
-        floatingLabelBehavior: FloatingLabelBehavior.always,
-        suffixIcon: CustomSurffixIcon(svgIcon: "assets/icons/mail.svg"),
       ),
     );
   }
