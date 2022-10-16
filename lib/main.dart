@@ -22,8 +22,7 @@ class MyApp extends StatelessWidget {
       title: 'Blood DOnation',
       theme: theme(),
       home: const PromptScreen(),
-      // We use routeName so that we dont need to remember the name
-      // initialRoute: SplashScreen.routeName,
+      
       routes: routes,
     );
   }
