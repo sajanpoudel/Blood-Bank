@@ -9,7 +9,7 @@ class Cart {
   Cart({required this.product, required this.numOfItem});
 }
 
-// Demo data for our cart
+//User Lists
 
 List<Cart> demoCarts = [
   Cart(product: demoPersons[0], numOfItem: 2),
