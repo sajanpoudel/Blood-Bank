@@ -1,6 +1,6 @@
                                                                   About BLOOD BANK
                                                                   
-                                                                  ![BloodBank](https://user-images.githubusercontent.com/35656849/196025440-846eeba2-bb79-4251-8350-cdf02005ed49.png)
+![BloodBank](https://user-images.githubusercontent.com/35656849/196025452-30c737e8-5834-4d9e-ba3f-7f9269c4f29a.png)
 
 
 As part of our team discussion, we found out blood donation is essential to the health and medical progress of every country, specially the developing countries that experience a shortage of suitable blood types and blood donors. Therefore, we found that the path to clinical or medical advancement is to address the issue of blood scarcity or unavailability. We thus made the decision to create a mobile application to solve these difficulties.
