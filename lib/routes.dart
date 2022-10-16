@@ -9,8 +9,7 @@ import 'package:mobileapp/screens/splash/prompt_screen.dart';
 
 import 'screens/sign_up/sign_up_screen.dart';
 
-// We use name route
-// All our routes will be available here
+
 final Map<String, WidgetBuilder> routes = {
   PromptScreen.routeName: (context) => const PromptScreen(),
   SignInScreen.routeName: (context) => const SignInScreen(),
