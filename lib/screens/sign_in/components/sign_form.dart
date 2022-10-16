@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:mobileapp/components/custom_surfix_icon.dart';
 import 'package:mobileapp/components/form_error.dart';
@@ -10,6 +11,7 @@ import '../../../constants.dart';
 import '../../../size_config.dart';
 
 class SignForm extends StatefulWidget {
+  static const String id = 'LoginScreen';
   const SignForm({Key? key}) : super(key: key);
 
   @override
@@ -18,10 +20,12 @@ class SignForm extends StatefulWidget {
 }
 
 class _SignFormState extends State<SignForm> {
+  FirebaseAuth _auth = FirebaseAuth.instance;
   final _formKey = GlobalKey<FormState>();
   String? email;
   String? password;
   bool? remember = false;
+  String errorMessage = '';
   final List<String?> errors = [];
 
   void addError({String? error}) {
@@ -77,11 +81,18 @@ class _SignFormState extends State<SignForm> {
           SizedBox(height: getProportionateScreenHeight(20)),
           DefaultButton(
             text: "Sign In",
-            press: () {
-              if (_formKey.currentState!.validate()) {
-                _formKey.currentState!.save();
-                KeyboardUtil.hideKeyboard(context);
-                Navigator.pushNamed(context, LoginSuccessScreen.routeName);
+            press: () async {
+              try {
+                if (_formKey.currentState!.validate()) {
+                  _formKey.currentState!.save();
+                  KeyboardUtil.hideKeyboard(context);
+                  UserCredential existingUser =
+                      await _auth.signInWithEmailAndPassword(
+                          email: email!, password: password!);
+                  Navigator.pushNamed(context, LoginSuccessScreen.routeName);
+                }
+              } catch (e) {
+                print(e);
               }
             },
           ),
@@ -100,7 +111,7 @@ class _SignFormState extends State<SignForm> {
         } else if (value.length >= 8) {
           removeError(error: kShortPassError);
         }
-        return;
+        password = value;
       },
       validator: (value) {
         if (value!.isEmpty) {
@@ -124,14 +135,14 @@ class _SignFormState extends State<SignForm> {
   TextFormField buildEmailFormField() {
     return TextFormField(
       keyboardType: TextInputType.emailAddress,
-      onSaved: (newValue) => email = newValue,
+      onSaved: (newValue) => email = newValue!,
       onChanged: (value) {
         if (value.isNotEmpty) {
           removeError(error: kEmailNullError);
         } else if (emailValidatorRegExp.hasMatch(value)) {
           removeError(error: kInvalidEmailError);
         }
-        return;
+        email = value;
       },
       validator: (value) {
         if (value!.isEmpty) {

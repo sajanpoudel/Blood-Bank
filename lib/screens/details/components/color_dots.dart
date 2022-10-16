@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mobileapp/components/rounded_icon_btn.dart';
-import 'package:mobileapp/models/Product.dart';
+import 'package:mobileapp/models/personlist.dart';
 
 import '../../../constants.dart';
 import '../../../size_config.dart';
@@ -11,7 +11,7 @@ class ColorDots extends StatelessWidget {
     required this.product,
   }) : super(key: key);
 
-  final Product product;
+  final Person product;
 
   @override
   Widget build(BuildContext context) {
@@ -22,13 +22,6 @@ class ColorDots extends StatelessWidget {
           EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
       child: Row(
         children: [
-          ...List.generate(
-            product.colors.length,
-            (index) => ColorDot(
-              color: product.colors[index],
-              isSelected: index == selectedColor,
-            ),
-          ),
           Spacer(),
           RoundedIconBtn(
             icon: Icons.remove,

@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 
 import '../../../size_config.dart';
-import 'categories.dart';
-import 'discount_banner.dart';
 import 'home_header.dart';
-import 'popular_product.dart';
-import 'special_offers.dart';
+import 'Peoplelist.dart';
+import 'bloodimg.dart';
 
 class Body extends StatelessWidget {
   const Body({Key? key}) : super(key: key);
@@ -19,11 +17,9 @@ class Body extends StatelessWidget {
             SizedBox(height: getProportionateScreenHeight(20)),
             const HomeHeader(),
             SizedBox(height: getProportionateScreenWidth(10)),
-            const DiscountBanner(),
-            Categories(),
-            const SpecialOffers(),
+            const BloodImage(),
             SizedBox(height: getProportionateScreenWidth(30)),
-            PopularProducts(),
+            PeopleList(),
             SizedBox(height: getProportionateScreenWidth(30)),
           ],
         ),

@@ -14,19 +14,15 @@ class SignUpForm extends StatefulWidget {
   const SignUpForm({Key? key}) : super(key: key);
 
   @override
-  // ignore: library_private_types_in_public_api
   _SignUpFormState createState() => _SignUpFormState();
 }
 
 class _SignUpFormState extends State<SignUpForm> {
   final _auth = FirebaseAuth.instance;
   final _formKey = GlobalKey<FormState>();
-  // final TextEditingCOntroller _controllerEmail = TextEditingController();
-  // final TextEditingCOntroller _controllerpassword = TextEditingController();
 
   String? email;
   String? password;
-  // ignore: non_constant_identifier_names
   String? conform_password;
   String? fullName;
   String errorMessage = '';
@@ -49,18 +45,6 @@ class _SignUpFormState extends State<SignUpForm> {
       });
     }
   }
-  // Future<void> createUserWithEmailAndPassword() async {
-  //   try{
-  //     await Auth().createUserWithEmailAndPassword(
-  //       email: _controlleEmail.text,
-  //       password: _controllerPassword.text,
-  //     );
-  //   } on FIrebaseAuthExecution catch (e) {
-  //     setState((){
-  //       addError(error: "Database Validation Error!");
-  //     });
-  //   }
-  // }
 
   @override
   Widget build(BuildContext context) {
@@ -68,13 +52,17 @@ class _SignUpFormState extends State<SignUpForm> {
       key: _formKey,
       child: Column(
         children: [
+          buildFullNameFormField(),
+          SizedBox(height: getProportionateScreenHeight(28)),
+          buildBloodGroup(),
+          SizedBox(height: getProportionateScreenHeight(28)),
           buildEmailFormField(),
-          SizedBox(height: getProportionateScreenHeight(30)),
+          SizedBox(height: getProportionateScreenHeight(28)),
           buildPasswordFormField(),
-          SizedBox(height: getProportionateScreenHeight(30)),
+          SizedBox(height: getProportionateScreenHeight(28)),
           buildConformPassFormField(),
           FormError(errors: errors),
-          SizedBox(height: getProportionateScreenHeight(40)),
+          SizedBox(height: getProportionateScreenHeight(30)),
           DefaultButton(
             text: "Sign Up",
             press: () async {
@@ -152,8 +140,6 @@ class _SignUpFormState extends State<SignUpForm> {
       decoration: const InputDecoration(
         labelText: "Password",
         hintText: "Enter your password",
-        // If  you are using latest version of flutter then lable text and hint text shown like this
-        // if you r using flutter less then 1.20.* then maybe this is not working properly
         floatingLabelBehavior: FloatingLabelBehavior.always,
         suffixIcon: CustomSurffixIcon(svgIcon: "assets/icons/lock.svg"),
       ),
@@ -185,22 +171,30 @@ class _SignUpFormState extends State<SignUpForm> {
       decoration: const InputDecoration(
         labelText: "Confirm Password",
         hintText: "Re-enter your password",
-        // If  you are using latest version of flutter then lable text and hint text shown like this
-        // if you r using flutter less then 1.20.* then maybe this is not working properly
         floatingLabelBehavior: FloatingLabelBehavior.always,
         suffixIcon: CustomSurffixIcon(svgIcon: "assets/icons/lock.svg"),
       ),
     );
   }
 
-  TextFormField buildLastNameFormField() {
+  TextFormField buildFullNameFormField() {
     return TextFormField(
       onSaved: (newValue) => fullName = newValue,
       decoration: const InputDecoration(
         labelText: "Full Name",
         hintText: "Enter your full name",
-        // If  you are using latest version of flutter then lable text and hint text shown like this
-        // if you r using flutter less then 1.20.* then maybe this is not working properly
+        floatingLabelBehavior: FloatingLabelBehavior.always,
+        suffixIcon: CustomSurffixIcon(svgIcon: "assets/icons/User.svg"),
+      ),
+    );
+  }
+
+  TextFormField buildBloodGroup() {
+    return TextFormField(
+      onSaved: (newValue) => fullName = newValue,
+      decoration: const InputDecoration(
+        labelText: "Blood Group",
+        hintText: "Enter your blood group type",
         floatingLabelBehavior: FloatingLabelBehavior.always,
         suffixIcon: CustomSurffixIcon(svgIcon: "assets/icons/User.svg"),
       ),
