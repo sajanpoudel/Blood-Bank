@@ -66,4 +66,20 @@ void main() {
     expect(filterPersons(demoPersons, 'o+').map((p) => p.id), [3]);
     expect(filterPersons(demoPersons, 'zzz'), isEmpty);
   });
+
+  test('filterPersons can also require a blood group', () {
+    expect(
+        filterPersons(demoPersons, '', bloodGroup: 'B-').map((p) => p.id), [2]);
+    expect(
+        filterPersons(demoPersons, 'pandey', bloodGroup: 'O+').map((p) => p.id),
+        [3]);
+    expect(filterPersons(demoPersons, 'smaran', bloodGroup: 'O+'), isEmpty);
+    expect(filterPersons(demoPersons, '', bloodGroup: null), hasLength(5));
+  });
+
+  test('every blood group of the demo donors can be chosen in the filter', () {
+    for (final person in demoPersons) {
+      expect(bloodGroups, contains(person.bloodGroup));
+    }
+  });
 }

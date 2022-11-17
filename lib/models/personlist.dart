@@ -31,9 +31,26 @@ class Person {
   }
 }
 
-/// The donors that match [query], in their original order.
-List<Person> filterPersons(List<Person> persons, String query) {
-  return persons.where((person) => person.matches(query)).toList();
+/// The blood groups a donor can have, in the order the filter shows them.
+const List<String> bloodGroups = [
+  'A+',
+  'A-',
+  'B+',
+  'B-',
+  'AB+',
+  'AB-',
+  'O+',
+  'O-'
+];
+
+/// The donors that match [query] and, when given, have exactly [bloodGroup], in their original order.
+List<Person> filterPersons(List<Person> persons, String query,
+    {String? bloodGroup}) {
+  return persons
+      .where((person) =>
+          person.matches(query) &&
+          (bloodGroup == null || person.bloodGroup == bloodGroup))
+      .toList();
 }
 
 // Our demo Persons
