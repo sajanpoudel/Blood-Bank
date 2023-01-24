@@ -16,6 +16,26 @@ class Person {
     required this.title,
     required this.description,
   });
+
+  static final RegExp _bloodGroupPattern =
+      RegExp(r'blood is\s+((?:AB|A|B|O)[+-])');
+
+  /// The blood group written in the description, such as AB+, or null when there is none.
+  String? get bloodGroup =>
+      _bloodGroupPattern.firstMatch(description)?.group(1);
+
+  /// True when [query] is part of the name or equals the blood group, ignoring case and spaces around it.
+  bool matches(String query) {
+    final text = query.trim().toLowerCase();
+    if (text.isEmpty) return true;
+    return title.toLowerCase().contains(text) ||
+        bloodGroup?.toLowerCase() == text;
+  }
+}
+
+/// The donors that match [query], in their original order.
+List<Person> filterPersons(List<Person> persons, String query) {
+  return persons.where((person) => person.matches(query)).toList();
 }
 
 // Our demo Persons

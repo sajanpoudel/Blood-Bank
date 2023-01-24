@@ -4,7 +4,8 @@ import 'package:mobileapp/models/personlist.dart';
 
 void main() {
   test('a person has sensible defaults', () {
-    final person = Person(id: 9, images: ['a.png'], title: 'Ada', description: 'Donor');
+    final person =
+        Person(id: 9, images: ['a.png'], title: 'Ada', description: 'Donor');
     expect(person.rating, 0.0);
     expect(person.isFavourite, isFalse);
     expect(person.isPopular, isFalse);
@@ -48,5 +49,21 @@ void main() {
       expect(demoPersons, contains(cart.product));
       expect(cart.numOfItem, greaterThan(0));
     }
+  });
+
+  test('the blood group is read from the description', () {
+    expect(demoPersons[0].bloodGroup, 'AB+');
+    expect(demoPersons[1].bloodGroup, 'B-');
+    expect(demoPersons.last.bloodGroup, 'A+');
+    final other = Person(
+        id: 8, images: ['a.png'], title: 'Ada', description: 'No group given');
+    expect(other.bloodGroup, isNull);
+  });
+
+  test('filterPersons matches names and exact blood groups', () {
+    expect(filterPersons(demoPersons, ''), hasLength(5));
+    expect(filterPersons(demoPersons, 'pandey').map((p) => p.id), [1, 3]);
+    expect(filterPersons(demoPersons, 'o+').map((p) => p.id), [3]);
+    expect(filterPersons(demoPersons, 'zzz'), isEmpty);
   });
 }
