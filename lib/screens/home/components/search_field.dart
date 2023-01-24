@@ -7,7 +7,11 @@ import '../../../size_config.dart';
 class SearchField extends StatelessWidget {
   const SearchField({
     Key? key,
+    this.onChanged,
   }) : super(key: key);
+
+  /// Called with the text after every change.
+  final ValueChanged<String>? onChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +22,7 @@ class SearchField extends StatelessWidget {
         borderRadius: BorderRadius.circular(15),
       ),
       child: TextField(
-        onChanged: (value) => debugPrint(value),
+        onChanged: onChanged,
         decoration: InputDecoration(
             contentPadding: EdgeInsets.symmetric(
                 horizontal: getProportionateScreenWidth(20),

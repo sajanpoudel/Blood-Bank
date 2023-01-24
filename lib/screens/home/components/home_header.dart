@@ -8,7 +8,11 @@ import 'search_field.dart';
 class HomeHeader extends StatelessWidget {
   const HomeHeader({
     Key? key,
+    this.onSearch,
   }) : super(key: key);
+
+  /// Called with the search text after every change.
+  final ValueChanged<String>? onSearch;
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +22,7 @@ class HomeHeader extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const SearchField(),
+          SearchField(onChanged: onSearch),
           IconBtnWithCounter(
             svgSrc: "assets/icons/Bell.svg",
             numOfitem: 3,
