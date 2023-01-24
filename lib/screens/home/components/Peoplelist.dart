@@ -7,10 +7,15 @@ import 'section_title.dart';
 
 /// The people list used on the home screen.
 class PeopleList extends StatelessWidget {
-  const PeopleList({super.key});
+  const PeopleList({super.key, this.query = ''});
+
+  /// Search text. Only donors that match it are listed.
+  final String query;
 
   @override
   Widget build(BuildContext context) {
+    final donors =
+        filterPersons(demoPersons, query).where((p) => p.isPopular).toList();
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -25,15 +30,12 @@ class PeopleList extends StatelessWidget {
           scrollDirection: Axis.vertical,
           child: Column(
             children: [
-              ...List.generate(
-                demoPersons.length,
-                (index) {
-                  if (demoPersons[index].isPopular)
-                    return ProductCard(product: demoPersons[index]);
-
-                  return const SizedBox.shrink();
-                },
-              ),
+              if (donors.isEmpty)
+                Padding(
+                  padding: EdgeInsets.all(getProportionateScreenWidth(20)),
+                  child: const Text('No donors match your search'),
+                ),
+              for (final donor in donors) ProductCard(product: donor),
               SizedBox(width: getProportionateScreenWidth(20)),
             ],
           ),

@@ -6,8 +6,15 @@ import 'Peoplelist.dart';
 import 'bloodimg.dart';
 
 /// Main content of the home screen.
-class Body extends StatelessWidget {
+class Body extends StatefulWidget {
   const Body({Key? key}) : super(key: key);
+
+  @override
+  State<Body> createState() => _BodyState();
+}
+
+class _BodyState extends State<Body> {
+  String _query = '';
 
   @override
   Widget build(BuildContext context) {
@@ -16,11 +23,11 @@ class Body extends StatelessWidget {
         child: Column(
           children: [
             SizedBox(height: getProportionateScreenHeight(20)),
-            const HomeHeader(),
+            HomeHeader(onSearch: (text) => setState(() => _query = text)),
             SizedBox(height: getProportionateScreenWidth(10)),
             const BloodImage(),
             SizedBox(height: getProportionateScreenWidth(30)),
-            const PeopleList(),
+            PeopleList(query: _query),
             SizedBox(height: getProportionateScreenWidth(30)),
           ],
         ),
