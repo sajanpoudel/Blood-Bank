@@ -9,4 +9,8 @@ void main() {
     expect(person.isFavourite, isFalse);
     expect(person.isPopular, isFalse);
   });
+
+  test('the demo list has five donors', () {
+    expect(demoPersons, hasLength(5));
+  });
 }
