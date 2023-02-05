@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mobileapp/components/coustom_bottom_nav_bar.dart';
+import 'package:mobileapp/components/custom_bottom_nav_bar.dart';
 import 'package:mobileapp/enums.dart';
 
 import 'components/body.dart';
