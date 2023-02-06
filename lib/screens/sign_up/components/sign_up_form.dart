@@ -75,7 +75,7 @@ class _SignUpFormState extends State<SignUpForm> {
                   Navigator.pushNamed(context, HomeScreen.routeName);
                 }
               } catch (e) {
-                print(e);
+                debugPrint(e.toString());
               }
             },
           ),

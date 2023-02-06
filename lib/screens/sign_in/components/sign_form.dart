@@ -92,7 +92,7 @@ class _SignFormState extends State<SignForm> {
                   Navigator.pushNamed(context, LoginSuccessScreen.routeName);
                 }
               } catch (e) {
-                print(e);
+                debugPrint(e.toString());
               }
             },
           ),
