@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mobileapp/size_config.dart';
 
+/// Main brand red used for buttons and highlights.
 const kPrimaryColor = Color.fromARGB(255, 238, 14, 18);
 const kPrimaryLightColor = Color(0xFFFFECDF);
 const kPrimaryGradientColor = LinearGradient(
@@ -11,6 +12,7 @@ const kPrimaryGradientColor = LinearGradient(
 const kSecondaryColor = Color(0xFF979797);
 const kTextColor = Color(0xFF757575);
 
+/// Duration for short UI transitions.
 const kAnimationDuration = Duration(milliseconds: 200);
 
 final headingStyle = TextStyle(
@@ -23,6 +25,8 @@ final headingStyle = TextStyle(
 const defaultDuration = Duration(milliseconds: 250);
 
 // Error Messages in Form
+
+/// Accepts addresses like name@example.com.
 final RegExp emailValidatorRegExp =
     RegExp(r"^[a-zA-Z0-9.]+@[a-zA-Z0-9]+\.[a-zA-Z]+");
 const String kEmailNullError = "Please Enter your email";
@@ -42,6 +46,7 @@ final otpInputDecoration = InputDecoration(
   enabledBorder: outlineInputBorder(),
 );
 
+/// Rounded border shared by the OTP style inputs.
 OutlineInputBorder outlineInputBorder() {
   return OutlineInputBorder(
     borderRadius: BorderRadius.circular(getProportionateScreenWidth(15)),
