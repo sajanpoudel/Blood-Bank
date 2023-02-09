@@ -18,3 +18,28 @@ We are quite pleased and delighted with our project. We could have added more fe
 Built with : Flutter, Firebase, Dart, Google login API, firebase auth and Java.
 
 
+
+## Run the app
+
+1. Install Flutter and create a Firebase project with email and Google sign in enabled.
+2. Add your own `google-services.json` (Android) or `GoogleService-Info.plist` (iOS) to the platform folders.
+3. Fetch packages and start the app:
+
+```
+flutter pub get
+flutter run
+```
+
+## Project layout
+
+- `lib/main.dart` starts Firebase and the app.
+- `lib/routes.dart` lists every named route.
+- `lib/constants.dart` and `lib/theme.dart` hold the colors, text styles and form messages.
+- `lib/screens/` has one folder per screen (splash, sign in, sign up, home, profile, details).
+- `lib/components/` has the widgets shared between screens.
+
+## Tests
+
+```
+flutter test
+```
