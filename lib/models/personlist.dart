@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 class Person {
   final int id;
   final String title, description;
