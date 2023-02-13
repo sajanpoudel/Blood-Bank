@@ -4,6 +4,8 @@ import 'profile_menu.dart';
 import 'profile_pic.dart';
 
 class Body extends StatelessWidget {
+  const Body({super.key});
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(

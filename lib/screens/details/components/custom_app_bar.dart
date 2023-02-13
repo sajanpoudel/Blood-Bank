@@ -7,7 +7,7 @@ import '../../../size_config.dart';
 class CustomAppBar extends StatelessWidget {
   final double rating;
 
-  CustomAppBar({required this.rating});
+  CustomAppBar({super.key, required this.rating});
 
   @override
   // AppBar().preferredSize.height provide us the height that appy on our app bar

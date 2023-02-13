@@ -8,6 +8,8 @@ import 'package:mobileapp/size_config.dart';
 import '../../../constants.dart';
 
 class Body extends StatelessWidget {
+  const Body({super.key});
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -42,6 +44,8 @@ class Body extends StatelessWidget {
 }
 
 class ForgotPassForm extends StatefulWidget {
+  const ForgotPassForm({super.key});
+
   @override
   _ForgotPassFormState createState() => _ForgotPassFormState();
 }
