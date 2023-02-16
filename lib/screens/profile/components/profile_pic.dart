@@ -15,8 +15,8 @@ class ProfilePic extends StatelessWidget {
         fit: StackFit.expand,
         clipBehavior: Clip.none,
         children: [
-          CircleAvatar(
-            backgroundImage: AssetImage("assets/images/h.png"),
+          const CircleAvatar(
+            backgroundImage: const AssetImage("assets/images/h.png"),
           ),
           Positioned(
             right: -16,
@@ -28,10 +28,10 @@ class ProfilePic extends StatelessWidget {
                 style: TextButton.styleFrom(
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(50),
-                    side: BorderSide(color: Colors.white),
+                    side: const BorderSide(color: Colors.white),
                   ),
                   primary: Colors.white,
-                  backgroundColor: Color(0xFFF5F6F9),
+                  backgroundColor: const Color(0xFFF5F6F9),
                 ),
                 onPressed: () {},
                 child: SvgPicture.asset("assets/icons/Camera Icon.svg"),

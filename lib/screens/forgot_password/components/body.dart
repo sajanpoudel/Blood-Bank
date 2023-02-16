@@ -29,12 +29,12 @@ class Body extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              Text(
+              const Text(
                 "Please enter your email and we will send \nyou a link to return to your account",
                 textAlign: TextAlign.center,
               ),
               SizedBox(height: SizeConfig.screenHeight * 0.1),
-              ForgotPassForm(),
+              const ForgotPassForm(),
             ],
           ),
         ),
@@ -89,11 +89,11 @@ class _ForgotPassFormState extends State<ForgotPassForm> {
               }
               return null;
             },
-            decoration: InputDecoration(
+            decoration: const InputDecoration(
               labelText: "Email",
               hintText: "Enter your email",
               floatingLabelBehavior: FloatingLabelBehavior.always,
-              suffixIcon: CustomSurffixIcon(svgIcon: "assets/icons/Mail.svg"),
+              suffixIcon: const CustomSurffixIcon(svgIcon: "assets/icons/Mail.svg"),
             ),
           ),
           SizedBox(height: getProportionateScreenHeight(30)),
@@ -108,7 +108,7 @@ class _ForgotPassFormState extends State<ForgotPassForm> {
             },
           ),
           SizedBox(height: SizeConfig.screenHeight * 0.1),
-          NoAccountText(),
+          const NoAccountText(),
         ],
       ),
     );

@@ -30,7 +30,7 @@ class PeopleList extends StatelessWidget {
                   if (demoPersons[index].isPopular)
                     return ProductCard(product: demoPersons[index]);
 
-                  return SizedBox
+                  return const SizedBox
                       .shrink(); 
                 },
               ),

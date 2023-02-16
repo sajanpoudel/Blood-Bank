@@ -20,9 +20,9 @@ class TopRoundedContainer extends StatelessWidget {
       width: double.infinity,
       decoration: BoxDecoration(
         color: color,
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(40),
-          topRight: Radius.circular(40),
+        borderRadius: const BorderRadius.only(
+          topLeft: const Radius.circular(40),
+          topRight: const Radius.circular(40),
         ),
       ),
       child: child,

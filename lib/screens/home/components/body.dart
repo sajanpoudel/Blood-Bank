@@ -19,7 +19,7 @@ class Body extends StatelessWidget {
             SizedBox(height: getProportionateScreenWidth(10)),
             const BloodImage(),
             SizedBox(height: getProportionateScreenWidth(30)),
-            PeopleList(),
+            const PeopleList(),
             SizedBox(height: getProportionateScreenWidth(30)),
           ],
         ),

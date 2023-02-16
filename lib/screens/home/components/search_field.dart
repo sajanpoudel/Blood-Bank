@@ -26,7 +26,7 @@ class SearchField extends StatelessWidget {
             focusedBorder: InputBorder.none,
             enabledBorder: InputBorder.none,
             hintText: "Search Donars",
-            prefixIcon: Icon(Icons.search)),
+            prefixIcon: const Icon(Icons.search)),
       ),
     );
   }

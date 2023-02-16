@@ -27,7 +27,7 @@ class Body extends StatelessWidget {
                     scale: 2.0,
                   ),
                 ),
-                SignUpForm(),
+                const SignUpForm(),
                 SizedBox(height: getProportionateScreenHeight(20)),
               ],
             ),

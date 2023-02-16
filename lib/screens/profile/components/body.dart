@@ -8,10 +8,10 @@ class Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      padding: const EdgeInsets.symmetric(vertical: 20),
+    return const SingleChildScrollView(
+      padding: EdgeInsets.symmetric(vertical: 20),
       child: Column(
-        children: const [
+        children: [
           ProfilePic(),
           SizedBox(height: 20),
         ],
