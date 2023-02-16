@@ -13,4 +13,9 @@ void main() {
   test('the demo list has five donors', () {
     expect(demoPersons, hasLength(5));
   });
+
+  test('demo donor ids are unique', () {
+    final ids = demoPersons.map((p) => p.id).toSet();
+    expect(ids, hasLength(demoPersons.length));
+  });
 }
