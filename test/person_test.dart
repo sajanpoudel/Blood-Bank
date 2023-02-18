@@ -18,4 +18,12 @@ void main() {
     final ids = demoPersons.map((p) => p.id).toSet();
     expect(ids, hasLength(demoPersons.length));
   });
+
+  test('every demo donor has a picture, a name and a blood group', () {
+    for (final person in demoPersons) {
+      expect(person.images, isNotEmpty);
+      expect(person.title, isNotEmpty);
+      expect(person.description, contains('blood is'));
+    }
+  });
 }
