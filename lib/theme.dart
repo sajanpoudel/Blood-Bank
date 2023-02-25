@@ -20,7 +20,6 @@ InputDecorationTheme inputDecorationTheme() {
     gapPadding: 10,
   );
   return InputDecorationTheme(
-  
     floatingLabelBehavior: FloatingLabelBehavior.always,
     contentPadding: const EdgeInsets.symmetric(horizontal: 42, vertical: 20),
     enabledBorder: outlineInputBorder,
