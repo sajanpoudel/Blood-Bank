@@ -6,6 +6,7 @@ import 'package:mobileapp/screens/profile/profile_screen.dart';
 import '../constants.dart';
 import '../enums.dart';
 
+/// The custom bottom nav bar widget shared between screens.
 class CustomBottomNavBar extends StatelessWidget {
   const CustomBottomNavBar({
     Key? key,
