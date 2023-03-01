@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import '../size_config.dart';
 
+/// The form error widget shared between screens.
 class FormError extends StatelessWidget {
   const FormError({
     Key? key,
