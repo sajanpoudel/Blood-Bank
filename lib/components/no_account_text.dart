@@ -4,6 +4,7 @@ import 'package:mobileapp/screens/sign_up/sign_up_screen.dart';
 import '../constants.dart';
 import '../size_config.dart';
 
+/// The no account text widget shared between screens.
 class NoAccountText extends StatelessWidget {
   const NoAccountText({
     Key? key,
