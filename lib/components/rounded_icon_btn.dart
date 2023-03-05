@@ -3,6 +3,7 @@ import 'package:mobileapp/constants.dart';
 
 import '../size_config.dart';
 
+/// The rounded icon btn widget shared between screens.
 class RoundedIconBtn extends StatelessWidget {
   const RoundedIconBtn({
     Key? key,
