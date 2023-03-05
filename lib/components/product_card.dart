@@ -6,6 +6,7 @@ import 'package:mobileapp/screens/details/details_screen.dart';
 import '../constants.dart';
 import '../size_config.dart';
 
+/// The product card widget shared between screens.
 class ProductCard extends StatelessWidget {
   const ProductCard({
     Key? key,
