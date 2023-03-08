@@ -10,6 +10,7 @@ Future<void> main() async {
   runApp(const MyApp());
 }
 
+/// The my app widget shared between screens.
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
