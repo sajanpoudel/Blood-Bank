@@ -8,6 +8,7 @@ import 'product_description.dart';
 import 'top_rounded_container.dart';
 import 'product_images.dart';
 
+/// Main content of the details screen.
 class Body extends StatelessWidget {
   final Person product;
 
