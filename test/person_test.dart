@@ -26,4 +26,10 @@ void main() {
       expect(person.description, contains('blood is'));
     }
   });
+
+  test('ratings stay between zero and five', () {
+    for (final person in demoPersons) {
+      expect(person.rating, inInclusiveRange(0.0, 5.0));
+    }
+  });
 }
