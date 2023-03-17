@@ -32,4 +32,8 @@ void main() {
       expect(person.rating, inInclusiveRange(0.0, 5.0));
     }
   });
+
+  test('the shared description names the last donor', () {
+    expect(demoPersons.last.description, description);
+  });
 }
