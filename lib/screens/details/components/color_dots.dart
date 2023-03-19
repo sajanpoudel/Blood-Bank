@@ -5,6 +5,7 @@ import 'package:mobileapp/models/personlist.dart';
 import '../../../constants.dart';
 import '../../../size_config.dart';
 
+/// The color dots used on the details screen.
 class ColorDots extends StatelessWidget {
   const ColorDots({
     Key? key,
@@ -39,6 +40,7 @@ class ColorDots extends StatelessWidget {
   }
 }
 
+/// The color dot used on the details screen.
 class ColorDot extends StatelessWidget {
   const ColorDot({
     Key? key,
