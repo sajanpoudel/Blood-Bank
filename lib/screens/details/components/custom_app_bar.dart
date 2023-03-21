@@ -4,6 +4,7 @@ import 'package:mobileapp/constants.dart';
 
 import '../../../size_config.dart';
 
+/// The custom app bar used on the details screen.
 class CustomAppBar extends StatelessWidget {
   final double rating;
 
