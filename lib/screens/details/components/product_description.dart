@@ -5,6 +5,7 @@ import 'package:mobileapp/models/personlist.dart';
 import '../../../constants.dart';
 import '../../../size_config.dart';
 
+/// The product description used on the details screen.
 class ProductDescription extends StatelessWidget {
   const ProductDescription({
     Key? key,
