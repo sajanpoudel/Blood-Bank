@@ -4,6 +4,7 @@ import 'package:mobileapp/models/personlist.dart';
 import '../../../constants.dart';
 import '../../../size_config.dart';
 
+/// The product images used on the details screen.
 class ProductImages extends StatefulWidget {
   const ProductImages({
     Key? key,
