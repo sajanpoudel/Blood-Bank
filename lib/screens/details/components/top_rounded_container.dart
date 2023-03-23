@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../size_config.dart';
 
+/// The top rounded container used on the details screen.
 class TopRoundedContainer extends StatelessWidget {
   const TopRoundedContainer({
     Key? key,
