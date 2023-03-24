@@ -5,6 +5,7 @@ import '../../models/personlist.dart';
 import 'components/body.dart';
 import 'components/custom_app_bar.dart';
 
+/// The details screen.
 class DetailsScreen extends StatelessWidget {
   static String routeName = "/details";
 
