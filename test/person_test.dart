@@ -36,4 +36,10 @@ void main() {
   test('the shared description names the last donor', () {
     expect(demoPersons.last.description, description);
   });
+
+  test('a cart line keeps its donor and amount', () {
+    final cart = Cart(product: demoPersons.first, numOfItem: 3);
+    expect(cart.product.id, demoPersons.first.id);
+    expect(cart.numOfItem, 3);
+  });
 }
