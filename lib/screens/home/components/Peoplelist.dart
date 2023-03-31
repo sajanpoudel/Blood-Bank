@@ -5,6 +5,7 @@ import 'package:mobileapp/models/personlist.dart';
 import '../../../size_config.dart';
 import 'section_title.dart';
 
+/// The people list used on the home screen.
 class PeopleList extends StatelessWidget {
   const PeopleList({super.key});
 
