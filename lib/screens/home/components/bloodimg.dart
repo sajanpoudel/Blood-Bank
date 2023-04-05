@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../size_config.dart';
 import 'section_title.dart';
 
+/// The blood image used on the home screen.
 class BloodImage extends StatelessWidget {
   const BloodImage({
     Key? key,
@@ -46,6 +47,7 @@ class BloodImage extends StatelessWidget {
   }
 }
 
+/// The special offer card used on the home screen.
 class SpecialOfferCard extends StatelessWidget {
   const SpecialOfferCard({
     Key? key,
