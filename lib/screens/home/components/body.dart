@@ -5,6 +5,7 @@ import 'home_header.dart';
 import 'Peoplelist.dart';
 import 'bloodimg.dart';
 
+/// Main content of the home screen.
 class Body extends StatelessWidget {
   const Body({Key? key}) : super(key: key);
 
