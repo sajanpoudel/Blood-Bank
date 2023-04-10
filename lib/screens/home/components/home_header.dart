@@ -4,6 +4,7 @@ import '../../../size_config.dart';
 import 'icon_btn_with_counter.dart';
 import 'search_field.dart';
 
+/// The home header used on the home screen.
 class HomeHeader extends StatelessWidget {
   const HomeHeader({
     Key? key,
