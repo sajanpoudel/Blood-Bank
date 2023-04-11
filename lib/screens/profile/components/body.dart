@@ -1,19 +1,48 @@
 import 'package:flutter/material.dart';
 
+import 'profile_menu.dart';
 import 'profile_pic.dart';
 
-/// Main content of the profile screen.
+/// Main content of the profile screen: the picture and the account menu.
 class Body extends StatelessWidget {
-  const Body({super.key});
+  const Body({super.key, this.onLogout});
+
+  /// Called when the Log Out entry is tapped.
+  final VoidCallback? onLogout;
 
   @override
   Widget build(BuildContext context) {
-    return const SingleChildScrollView(
-      padding: EdgeInsets.symmetric(vertical: 20),
+    return SingleChildScrollView(
+      padding: const EdgeInsets.symmetric(vertical: 20),
       child: Column(
         children: [
-          ProfilePic(),
-          SizedBox(height: 20),
+          const ProfilePic(),
+          const SizedBox(height: 20),
+          ProfileMenu(
+            text: "My Account",
+            icon: "assets/icons/User Icon.svg",
+            press: () {},
+          ),
+          ProfileMenu(
+            text: "Notifications",
+            icon: "assets/icons/Bell.svg",
+            press: () {},
+          ),
+          ProfileMenu(
+            text: "Settings",
+            icon: "assets/icons/Settings.svg",
+            press: () {},
+          ),
+          ProfileMenu(
+            text: "Help Center",
+            icon: "assets/icons/Question mark.svg",
+            press: () {},
+          ),
+          ProfileMenu(
+            text: "Log Out",
+            icon: "assets/icons/Log out.svg",
+            press: onLogout,
+          ),
         ],
       ),
     );
