@@ -7,15 +7,19 @@ import 'section_title.dart';
 
 /// The people list used on the home screen.
 class PeopleList extends StatelessWidget {
-  const PeopleList({super.key, this.query = ''});
+  const PeopleList({super.key, this.query = '', this.bloodGroup});
 
   /// Search text. Only donors that match it are listed.
   final String query;
 
+  /// When set, only donors with exactly this blood group are listed.
+  final String? bloodGroup;
+
   @override
   Widget build(BuildContext context) {
-    final donors =
-        filterPersons(demoPersons, query).where((p) => p.isPopular).toList();
+    final donors = filterPersons(demoPersons, query, bloodGroup: bloodGroup)
+        .where((p) => p.isPopular)
+        .toList();
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
