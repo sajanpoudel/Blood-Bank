@@ -4,7 +4,6 @@ import 'package:mobileapp/components/default_button.dart';
 import 'package:mobileapp/components/form_error.dart';
 import 'package:mobileapp/screens/home/home_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
 import '../../../constants.dart';
 import '../../../size_config.dart';
@@ -70,9 +69,8 @@ class _SignUpFormState extends State<SignUpForm> {
               try {
                 if (_formKey.currentState!.validate()) {
                   // if all are valid then go to success screen
-                  UserCredential newUser =
-                      await _auth.createUserWithEmailAndPassword(
-                          email: email!, password: password!);
+                  await _auth.createUserWithEmailAndPassword(
+                      email: email!, password: password!);
                   Navigator.pushNamed(context, HomeScreen.routeName);
                 }
               } catch (e) {

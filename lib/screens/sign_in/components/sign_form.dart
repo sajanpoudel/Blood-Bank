@@ -87,9 +87,8 @@ class _SignFormState extends State<SignForm> {
                 if (_formKey.currentState!.validate()) {
                   _formKey.currentState!.save();
                   KeyboardUtil.hideKeyboard(context);
-                  UserCredential existingUser =
-                      await _auth.signInWithEmailAndPassword(
-                          email: email!, password: password!);
+                  await _auth.signInWithEmailAndPassword(
+                      email: email!, password: password!);
                   Navigator.pushNamed(context, LoginSuccessScreen.routeName);
                 }
               } catch (e) {
