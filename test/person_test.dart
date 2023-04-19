@@ -42,4 +42,11 @@ void main() {
     expect(cart.product.id, demoPersons.first.id);
     expect(cart.numOfItem, 3);
   });
+
+  test('the demo cart points at demo donors', () {
+    for (final cart in demoCarts) {
+      expect(demoPersons, contains(cart.product));
+      expect(cart.numOfItem, greaterThan(0));
+    }
+  });
 }
