@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../size_config.dart';
 
+/// The section title used on the home screen.
 class SectionTitle extends StatelessWidget {
   const SectionTitle({
     Key? key,
