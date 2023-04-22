@@ -4,6 +4,7 @@ import 'package:mobileapp/enums.dart';
 
 import 'components/body.dart';
 
+/// The home screen.
 class HomeScreen extends StatelessWidget {
   static String routeName = "/home";
 
