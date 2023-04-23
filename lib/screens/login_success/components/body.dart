@@ -3,6 +3,7 @@ import 'package:mobileapp/components/default_button.dart';
 import 'package:mobileapp/screens/home/home_screen.dart';
 import 'package:mobileapp/size_config.dart';
 
+/// Main content of the login success screen.
 class Body extends StatelessWidget {
   const Body({super.key});
 
