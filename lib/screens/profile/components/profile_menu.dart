@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../constants.dart';
 
+/// The profile menu used on the profile screen.
 class ProfileMenu extends StatelessWidget {
   const ProfileMenu({
     Key? key,
