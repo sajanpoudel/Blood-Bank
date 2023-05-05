@@ -4,6 +4,7 @@ import 'package:mobileapp/enums.dart';
 
 import 'components/body.dart';
 
+/// The profile screen.
 class ProfileScreen extends StatelessWidget {
   static String routeName = "/profile";
 
