@@ -4,6 +4,7 @@ import 'package:mobileapp/components/social_card.dart';
 import '../../../size_config.dart';
 import 'sign_form.dart';
 
+/// Main content of the sign in screen.
 class Body extends StatelessWidget {
   const Body({super.key});
 
