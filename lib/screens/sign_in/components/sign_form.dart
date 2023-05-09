@@ -10,6 +10,7 @@ import '../../../components/default_button.dart';
 import '../../../constants.dart';
 import '../../../size_config.dart';
 
+/// The sign form used on the sign in screen.
 class SignForm extends StatefulWidget {
   static const String id = 'LoginScreen';
   const SignForm({Key? key}) : super(key: key);
