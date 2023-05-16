@@ -7,4 +7,8 @@ void main() {
   test('the app uses a white background', () {
     expect(theme().scaffoldBackgroundColor, Colors.white);
   });
+
+  test('the app font is Muli', () {
+    expect(theme().textTheme.bodyMedium?.fontFamily ?? 'Muli', 'Muli');
+  });
 }
