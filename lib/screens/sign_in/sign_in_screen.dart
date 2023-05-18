@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'components/body.dart';
 
+/// The sign in screen.
 class SignInScreen extends StatelessWidget {
   static String routeName = "/sign_in";
 
