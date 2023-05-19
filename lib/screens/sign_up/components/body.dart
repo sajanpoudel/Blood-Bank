@@ -4,6 +4,7 @@ import 'package:mobileapp/size_config.dart';
 
 import 'sign_up_form.dart';
 
+/// Main content of the sign up screen.
 class Body extends StatelessWidget {
   const Body({Key? key}) : super(key: key);
 
