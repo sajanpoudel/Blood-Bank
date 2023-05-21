@@ -6,6 +6,7 @@ import 'package:mobileapp/size_config.dart';
 import '../components/splash_content.dart';
 import '../../../components/default_button.dart';
 
+/// Main content of the splash screen.
 class Body extends StatefulWidget {
   const Body({Key? key}) : super(key: key);
 
