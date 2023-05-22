@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mobileapp/screens/splash/components/body.dart';
 import 'package:mobileapp/size_config.dart';
 
+/// The prompt screen.
 class PromptScreen extends StatelessWidget {
   static String routeName = "/home";
 
