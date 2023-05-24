@@ -11,4 +11,9 @@ void main() {
   test('the app font is Muli', () {
     expect(theme().textTheme.bodyMedium?.fontFamily ?? 'Muli', 'Muli');
   });
+
+  test('body text uses the muted text color', () {
+    expect(textTheme().bodyLarge?.color, kTextColor);
+    expect(textTheme().bodyMedium?.color, kTextColor);
+  });
 }
