@@ -31,7 +31,7 @@ class ProfilePic extends StatelessWidget {
                     borderRadius: BorderRadius.circular(50),
                     side: const BorderSide(color: Colors.white),
                   ),
-                  primary: Colors.white,
+                  foregroundColor: Colors.white,
                   backgroundColor: const Color(0xFFF5F6F9),
                 ),
                 onPressed: () {},
