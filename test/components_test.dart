@@ -18,4 +18,9 @@ Widget app(Widget child) {
 }
 
 void main() {
+
+  testWidgets('DefaultButton shows its text', (tester) async {
+    await tester.pumpWidget(app(DefaultButton(text: 'Continue', press: () {})));
+    expect(find.text('Continue'), findsOneWidget);
+  });
 }
