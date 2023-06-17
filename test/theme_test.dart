@@ -16,4 +16,11 @@ void main() {
     expect(textTheme().bodyLarge?.color, kTextColor);
     expect(textTheme().bodyMedium?.color, kTextColor);
   });
+
+  test('inputs use rounded borders and an always floating label', () {
+    final input = inputDecorationTheme();
+    expect(input.floatingLabelBehavior, FloatingLabelBehavior.always);
+    expect(input.border, isA<OutlineInputBorder>());
+    expect(input.enabledBorder, input.focusedBorder);
+  });
 }
