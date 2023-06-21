@@ -23,4 +23,11 @@ void main() {
     await tester.pumpWidget(app(DefaultButton(text: 'Continue', press: () {})));
     expect(find.text('Continue'), findsOneWidget);
   });
+
+  testWidgets('DefaultButton calls press when tapped', (tester) async {
+    var taps = 0;
+    await tester.pumpWidget(app(DefaultButton(text: 'Go', press: () => taps++)));
+    await tester.tap(find.text('Go'));
+    expect(taps, 1);
+  });
 }
