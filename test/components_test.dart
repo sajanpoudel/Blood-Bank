@@ -30,4 +30,10 @@ void main() {
     await tester.tap(find.text('Go'));
     expect(taps, 1);
   });
+
+  testWidgets('DefaultButton fills the available width', (tester) async {
+    await tester.pumpWidget(app(DefaultButton(text: 'Wide', press: () {})));
+    final box = tester.getSize(find.byType(DefaultButton));
+    expect(box.width, tester.getSize(find.byType(Scaffold)).width);
+  });
 }
