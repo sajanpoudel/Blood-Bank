@@ -36,4 +36,11 @@ void main() {
     final box = tester.getSize(find.byType(DefaultButton));
     expect(box.width, tester.getSize(find.byType(Scaffold)).width);
   });
+
+  testWidgets('DefaultButton uses the primary color', (tester) async {
+    await tester.pumpWidget(app(DefaultButton(text: 'Colour', press: () {})));
+    final button = tester.widget<TextButton>(find.byType(TextButton));
+    final color = button.style!.backgroundColor!.resolve({});
+    expect(color, kPrimaryColor);
+  });
 }
