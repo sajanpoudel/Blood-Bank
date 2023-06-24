@@ -43,4 +43,9 @@ void main() {
     final color = button.style!.backgroundColor!.resolve({});
     expect(color, kPrimaryColor);
   });
+
+  testWidgets('RoundedIconBtn shows its icon', (tester) async {
+    await tester.pumpWidget(app(RoundedIconBtn(icon: Icons.add, press: () {})));
+    expect(find.byIcon(Icons.add), findsOneWidget);
+  });
 }
