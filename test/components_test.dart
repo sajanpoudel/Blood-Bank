@@ -48,4 +48,11 @@ void main() {
     await tester.pumpWidget(app(RoundedIconBtn(icon: Icons.add, press: () {})));
     expect(find.byIcon(Icons.add), findsOneWidget);
   });
+
+  testWidgets('RoundedIconBtn calls press when tapped', (tester) async {
+    var taps = 0;
+    await tester.pumpWidget(app(RoundedIconBtn(icon: Icons.remove, press: () => taps++)));
+    await tester.tap(find.byIcon(Icons.remove));
+    expect(taps, 1);
+  });
 }
