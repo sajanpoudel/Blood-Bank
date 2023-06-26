@@ -55,4 +55,11 @@ void main() {
     await tester.tap(find.byIcon(Icons.remove));
     expect(taps, 1);
   });
+
+  testWidgets('RoundedIconBtn has no shadow by default', (tester) async {
+    await tester.pumpWidget(app(RoundedIconBtn(icon: Icons.add, press: () {})));
+    final container = tester.widget<Container>(find.byType(Container).first);
+    final decoration = container.decoration as BoxDecoration;
+    expect(decoration.boxShadow, isEmpty);
+  });
 }
