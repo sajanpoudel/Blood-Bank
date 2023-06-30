@@ -62,4 +62,11 @@ void main() {
     final decoration = container.decoration as BoxDecoration;
     expect(decoration.boxShadow, isEmpty);
   });
+
+  testWidgets('RoundedIconBtn can show a shadow', (tester) async {
+    await tester.pumpWidget(app(RoundedIconBtn(icon: Icons.add, press: () {}, showShadow: true)));
+    final container = tester.widget<Container>(find.byType(Container).first);
+    final decoration = container.decoration as BoxDecoration;
+    expect(decoration.boxShadow, hasLength(1));
+  });
 }
