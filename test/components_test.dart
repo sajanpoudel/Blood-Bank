@@ -69,4 +69,13 @@ void main() {
     final decoration = container.decoration as BoxDecoration;
     expect(decoration.boxShadow, hasLength(1));
   });
+
+  testWidgets('proportionate sizes follow the screen size', (tester) async {
+    tester.view.physicalSize = const Size(750, 1624);
+    tester.view.devicePixelRatio = 2.0;
+    addTearDown(tester.view.reset);
+    await tester.pumpWidget(app(const SizedBox()));
+    expect(getProportionateScreenWidth(375), 375.0);
+    expect(getProportionateScreenHeight(500), 406.0);
+  });
 }
