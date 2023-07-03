@@ -78,4 +78,10 @@ void main() {
     expect(getProportionateScreenWidth(375), 375.0);
     expect(getProportionateScreenHeight(500), 406.0);
   });
+
+  testWidgets('SizeConfig stores the orientation', (tester) async {
+    await tester.pumpWidget(app(const SizedBox()));
+    expect(SizeConfig.orientation, isNotNull);
+    expect(SizeConfig.screenWidth, greaterThan(0));
+  });
 }
