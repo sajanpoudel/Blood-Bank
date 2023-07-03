@@ -40,7 +40,7 @@ class Body extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     const Text("Or Sign In With  "),
-                    SocalCard(
+                    SocialCard(
                       icon: "assets/icons/google-icon.svg",
                       press: () {},
                     ),

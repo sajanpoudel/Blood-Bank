@@ -3,9 +3,9 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import '../size_config.dart';
 
-/// The socal card widget shared between screens.
-class SocalCard extends StatelessWidget {
-  const SocalCard({
+/// The social card widget shared between screens.
+class SocialCard extends StatelessWidget {
+  const SocialCard({
     Key? key,
     this.icon,
     this.press,
