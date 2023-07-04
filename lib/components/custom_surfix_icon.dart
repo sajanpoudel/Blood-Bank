@@ -3,9 +3,9 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import '../size_config.dart';
 
-/// The custom surffix icon widget shared between screens.
-class CustomSurffixIcon extends StatelessWidget {
-  const CustomSurffixIcon({
+/// The custom suffix icon widget shared between screens.
+class CustomSuffixIcon extends StatelessWidget {
+  const CustomSuffixIcon({
     Key? key,
     required this.svgIcon,
   }) : super(key: key);

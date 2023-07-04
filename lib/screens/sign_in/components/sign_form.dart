@@ -128,7 +128,7 @@ class _SignFormState extends State<SignForm> {
         labelText: "Password",
         hintText: "Enter your password",
         floatingLabelBehavior: FloatingLabelBehavior.always,
-        suffixIcon: CustomSurffixIcon(svgIcon: "assets/icons/lock.svg"),
+        suffixIcon: CustomSuffixIcon(svgIcon: "assets/icons/lock.svg"),
       ),
     );
   }
@@ -159,7 +159,7 @@ class _SignFormState extends State<SignForm> {
         labelText: "Email",
         hintText: "Enter your email address",
         floatingLabelBehavior: FloatingLabelBehavior.always,
-        suffixIcon: CustomSurffixIcon(svgIcon: "./assets/icons/mail.svg"),
+        suffixIcon: CustomSuffixIcon(svgIcon: "./assets/icons/mail.svg"),
       ),
     );
   }
