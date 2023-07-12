@@ -27,7 +27,7 @@ class PeopleList extends StatelessWidget {
         Padding(
           padding:
               EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
-          child: SectionTitle(title: "Donars Near You!", press: () {}),
+          child: SectionTitle(title: "Donors Near You!", press: () {}),
         ),
         SizedBox(height: getProportionateScreenWidth(20)),
         SingleChildScrollView(
