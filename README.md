@@ -17,7 +17,4 @@ We are quite pleased and delighted with our project. We could have added more fe
 
 Built with : Flutter, Firebase, Dart, Google login API, firebase auth and Java.
 
-Team Members:
-1. Ayush Ghimire - https://github.com/Aayush-jpg/Blood-Bank
-2. Sajan Poudel - https://github.com/sajanpoudel/Blood-Bank
 
