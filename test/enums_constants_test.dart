@@ -6,4 +6,9 @@ void main() {
   test('the bottom bar has four tabs in order', () {
     expect(MenuState.values, [MenuState.home, MenuState.favourite, MenuState.message, MenuState.profile]);
   });
+
+  test('animations are short', () {
+    expect(kAnimationDuration, const Duration(milliseconds: 200));
+    expect(defaultDuration, const Duration(milliseconds: 250));
+  });
 }
