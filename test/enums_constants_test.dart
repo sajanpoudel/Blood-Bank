@@ -11,4 +11,9 @@ void main() {
     expect(kAnimationDuration, const Duration(milliseconds: 200));
     expect(defaultDuration, const Duration(milliseconds: 250));
   });
+
+  test('the primary color is a strong red', () {
+    expect(kPrimaryColor.red, greaterThan(200));
+    expect(kPrimaryColor.green, lessThan(50));
+  });
 }
