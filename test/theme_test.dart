@@ -23,4 +23,11 @@ void main() {
     expect(input.border, isA<OutlineInputBorder>());
     expect(input.enabledBorder, input.focusedBorder);
   });
+
+  test('the app bar is flat and white', () {
+    final bar = appBarTheme();
+    expect(bar.elevation, 0);
+    expect(bar.backgroundColor, Colors.white);
+    expect(bar.iconTheme?.color, Colors.black);
+  });
 }
