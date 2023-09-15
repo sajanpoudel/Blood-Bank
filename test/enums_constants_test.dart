@@ -16,4 +16,10 @@ void main() {
     expect(kPrimaryColor.red, greaterThan(200));
     expect(kPrimaryColor.green, lessThan(50));
   });
+
+  test('error messages are short sentences', () {
+    for (final message in [kEmailNullError, kPassNullError, kShortPassError]) {
+      expect(message.length, lessThan(40));
+    }
+  });
 }
